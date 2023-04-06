@@ -23,6 +23,14 @@
             */
             predskolak ??= new Predskolak(vek, pohlavi, jmeno); // neni thread safe
 
+            /*
+            // thread safe implementace singletonu
+            lock(_lock)
+            {
+                if (instance == null)
+            }
+            */
+
             return predskolak;
         }
     }

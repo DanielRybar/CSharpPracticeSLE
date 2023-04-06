@@ -16,6 +16,7 @@
 * OK
 * [materiály - prezentace](./08_09NavrhoveVzory/Materiály)
 ### 10. Paralelní programování
+* OK
 ### 13. Testování SW
 * OK
 
