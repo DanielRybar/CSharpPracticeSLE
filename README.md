@@ -7,9 +7,14 @@
 ### 3. Strukturované datové typy
 * OK
 ### 4. Spojové struktury
+* OK
 ### 5. a 6. OOP
+* OK
 ### 7. Podprogramy
+* OK
 ### 8. a 9. Návrhové vzory
+* OK
+* [materiály - prezentace](./08_09NavrhoveVzory/Materiály)
 ### 10. Paralelní programování
 ### 13. Testování SW
 * OK
@@ -31,4 +36,3 @@
 * git pull <remote>
 * git revert 3321844
 * git merge <branch-name>
-
