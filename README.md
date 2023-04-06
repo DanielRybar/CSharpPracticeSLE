@@ -5,12 +5,14 @@
 ### 2. Algoritmus, algoritmická složitost
 * OK
 ### 3. Strukturované datové typy
+* OK
 ### 4. Spojové struktury
 ### 5. a 6. OOP
 ### 7. Podprogramy
 ### 8. a 9. Návrhové vzory
 ### 10. Paralelní programování
 ### 13. Testování SW
+* OK
 
 ---------------------------
 ### 11. Architektury .NET
