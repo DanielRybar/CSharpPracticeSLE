@@ -1,0 +1,12 @@
+1) Uveďte libovolný algoritmus pro řazení celých čísel v poli s určením operační a paměťové složitosti (C#).
+Na uvedeném algoritmu vysvětlete vlastnosti algoritmu.
+
+2) Jakou vlastnost popisuje u řadícího algoritmu stabilita?
+
+3) Rekurzivní řešení Fibonacciho posloupnosti je tento algoritmus neefektivní. Uveďte důvod.
+
+4) Jaký algoritmus používá třída Random v C# pro generování náhodných čísel?
+
+5) Jaký algoritmus používá medoda Sort() u kolekcí v C#?
+
+6) Algoritmus pro vyhledání prvku v poli/kolekci má lineární složitost. Bylo by možné složitost vylepšit v případě, že by posloupnost byla seřazená. Uveďte způsob řešení a odvoďte jeho složitost. 

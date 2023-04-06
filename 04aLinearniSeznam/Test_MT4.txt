@@ -1,0 +1,39 @@
+Spojový seznam:
+1) přidejte metodu, která vrátí index zadaného prvku
+
+2) přidejte metodu pro zjištění počtu výskytů prvku T
+(seznam může být nesetříděný a prvky se stejnou hodnotou se mohou opakovat)
+
+3) přidejte metodu, která obrátí pořadí prvků
+
+4) přidejte mtodu pro odstranění všech prvků větších než vstupní parametr
+
+5) upravte třídu Spojový seznam tak, aby implementovala rozhraní IList<T>
+neboli umožňovala přístup k prvkům pomocí indexu zapsaného v []
+
+6) přidejte  metodu nebo operátor + pro spojení dvou seřazených seznamů tak,
+ aby výsledek byl opět seřazený seznam
+
+Binární strom:
+
+7) přidejte metodu pro zjištění počtu všech uzlů
+
+8) přidejte metodu pro zjištění počtu výskytů prvku T
+(ve stromě se prvky se stejnou hodnotou mohou opakovat)
+
+9) přidejte metodu pro zjištění počtu uzlů s 0, 1 nebo 2 následníky
+(0, 1, 2 bude vstupní parametr)
+
+10) přidejte metodu, která zjistí, zda je strom vyvážený
+(vzdálenost všech listů od kořene se liší maximálně o 1)
+
+Teoretická:
+11) Jak jsou v C# vnitřně implementovány třídy:
+a) Stack
+b) Queue
+c) Dictionary
+
+
+
+
+

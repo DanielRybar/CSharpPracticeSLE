@@ -1,0 +1,17 @@
+IPTV
+Vytvoøte implementaci:
+Tøídy:
+Vysilac - generuje obsah ve formì zpráv, které obsahují id_vysilace, typ_vysilani: ZABAVA, ZPRAVY, SPORT, FILMY a libovolný text
+Prijimac - prijima zpravy dle zadaného id_vysilace a typ_vysilani
+Smerovac - prijima zpravy od vysilacu a predava je prijimacum
+
+Pravidla:
+Je pouze jeden smìrovaè.
+Smìrovaè na zaèátku nema žádný registrovaný pøijímaè.
+Každý vysílaè má unikátní id_vysílaèe.
+Pøijímaè musí u smìrovaèe registrovat odkud (id_vysílaèe) a co chce pøijímat (typ_vysilani). 
+Každý pøijímaè mùže v jednom okamžiku pøijímat pouze zprávy z jednoho vysílaèe a s jedním typem zpráv.
+Po pøedání zprávy vysílaèi, dostane zpìt potvrzení, zda nìkdo tuto zprávu pøijímá.
+Smìrovaè si pamatuje omezený poèet zpráv, které nikdo nepøijal.
+Pøijímaè se mùže z pøijímání zpráv odhlásit.
+Nemìlo by dojít k zmìnì obsahu na cestì od vysílaèe k pøijímaèi.

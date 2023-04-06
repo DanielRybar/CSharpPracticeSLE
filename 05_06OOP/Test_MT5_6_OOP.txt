@@ -1,0 +1,21 @@
+Vytvořte třídy Predchudce a Naslednik s následujícími vlastnostmi:
+Predchudce:
+2 atributy, které budou neveřejné. Jeden z nich bude přístupný pro následníky.
+2 metody, jedna bude virtuální.
+
+Naslednik:
+Bude mít vlastní implementaci obou metod z předchůdce.
+
+V hlavním programu demonstrujte rozdíl mezi voláním virtuální a překryté metody.
+Je možné z třídy následník přistupovat k oběma chráněným atributům předchůdce?
+Upravte třídu Nasledník, aby z ní nebylo možné dědit.
+
+V třídě Predchudce a Následnik deklarujte přetížený operátor, který bude mít ve třídě Naslednik  odlišné chování než ve třídě Predchudce.
+
+Uveďte vlastnosti a rozdíly v použití abstraktní třídy a rozhraní?
+
+Uveďte příklad deklarace přetíženého operátoru.
+
+Vysvětlete vlastními slovy pojmy generalizace a specializace.
+
+Je v C# nějaká implicitní přetížená metoda?

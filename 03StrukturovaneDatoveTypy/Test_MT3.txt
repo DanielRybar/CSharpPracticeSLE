@@ -1,0 +1,4 @@
+1) Vytvořte co nejjednodušší příklad demonstrující alespoň 2 rozdíly mezi struct a class.
+2) Vytvořte generickou třídu implementující Sk1) frontu Sk2) zásobník pomocí pole. 
+Konstruktor bude mít parametr - počáteční kapacita. 
+Třída bude kromě konstruktoru obsahovat metody pro vkládání, odebírání, zjištění počtu prvků a změnu velikosti (Resize s parametrem nová kapacita). 

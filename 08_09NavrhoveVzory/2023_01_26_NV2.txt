@@ -1,0 +1,13 @@
+1) Upravte třídu Předškolák, aby bylo možné vytvořit pouze jednu instanci. Další požadavky na vytvoření nové instance budou vracet už vytvořenou. Pokud dostaneme instanci s jinými parametry, někdo nás předběhl.
+(Nápověda: Skrytý konstruktor. Veřejná metoda pro vytváření instancí.
+ Referenci je třeba si uložit ve statické proměnné.)
+
+2) Upravte třídu Školak, aby bylo možné vytvářet pouze omezený počet instancí. Počet instancí bude nějaká fixní hodnota.
+Pokud danou instanci už nebudete používat, tak ji vraťte, aby ji bylo možné poskytnout někomu jinému.
+(Nápověda: Skrytý konstruktor. Veřejná metoda pro vytváření instancí. Statická kolekce/pole s omezenou kapacitou.)
+
+3) Upravte třídu Pracující, aby bylo možné vytvářet pouze instance s unikátními (neopakujícími se) parametry. Pokud bude volána metoda pro vytvoření nové instance s kombinací parametrů, která už existuje, vrátí se reference na již vytvořenou instanci.
+(Nápověda: Skrytý konstruktor. Veřejná metoda pro vytváření instancí.
+Statická kolekce. Před vytvořením nového objektu kontrolujeme,
+zda objekt se stejnými parametry už neexistuje.)
+

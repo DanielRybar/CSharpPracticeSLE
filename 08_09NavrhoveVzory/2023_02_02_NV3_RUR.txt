@@ -1,0 +1,28 @@
+RUR
+Vytvoøte implementaci:
+Tøídy:
+Robot - umí v jednom okamžiku provádìt pouze jednu ze 4 èinností
+Ovladac - slouží pro komunikaci s robotem
+Moduly - výmìnné moduly, které umožòují robotovi specializované èinnosti - VRTANI, BROUSENI, SVAROVANI, REZANI
+(Moduly maji spolecneho predchudce a pretizenou metodu pro provádìní èinnosti.)
+Povel - slouží pouze jako obalující tøída pro zprávy pøedávané z ovladaèe do robota
+(Obsah zprávy by nemìl být modifikován.) 
+
+Pravidla:
+Ovladaè pøedává robotovi povely pomocí zpráv obsahujících: typ èinnosti, dobu a místo.
+Robot na zaèátku nemá žádný modul.
+V jedné chvíli mùže mít pouze jeden nebo žádný modul.
+Pøi výmìnì modulu musí odebrat ten stávající.
+Jeden ovladaè mùže posílat povely libovolnému robotovi.
+Robot potvrzuje provedení èinnosti.
+Robot eviduje celkový odpracovaný èas (pøípadnì èas dle jednotlivých èinností).
+
+
+// øešení
+Povel - má pouze readonly atributy, je to NV pøepravka
+Ovladac - ProvedPrikaz(Robot robot, Povel povel)
+Robot - modul, odprasovanyCas, 
+	ZmenaModulu(Modul modul) - bude až na základì ProvedPrikaz(), 
+	ProvedPrikaz(Povel povel)
+	IModul - ProvedCinnost
+	Modul - GetInstance : IModul

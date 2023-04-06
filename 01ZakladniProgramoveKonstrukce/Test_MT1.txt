@@ -1,0 +1,13 @@
+Co se stane v případě, že:
+a) zapíšete hodnotu 32bit do 16bit
+b) float do int
+c) záporné číslo do proměnné pouze pro kladná čísla
+Jak velký je datový typ bool?
+Je datový typ string roven poli znaků (char)?
+Patří struktury (struct) mezi kolekce?
+Je možné nahradit ternární operátor ?: pomocí if-else? (příklad)
+Kdy lze použít operátor , (čárka)? (příklad)
+Pokud bude mít proměnná index stejnou hodnotu, budou tyto 2 příkazy pracovat se stejným prvkem pole?
+pole[++index] a pole[index--]
+Napište stejný cyklus pomocí while, do-while, for a for-each.
+Napište část kódu reprezentující rozdíl mezi hodnotovým a referenčním datovým typem.
