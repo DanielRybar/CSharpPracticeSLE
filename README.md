@@ -1,11 +1,11 @@
 # Témata PRG - příprava
 
-### 1. Základní programové konstrukce
-### 2. Algoritmus, algoritmická složitost
-### 3. Strukturované datové typy
-### 4. Spojové struktury
-### 5. a 6. OOP
-### 7. Podprogramy
+### <s>1. Základní programové konstrukce</s>
+### <s>2. Algoritmus, algoritmická složitost</s>
+### <s>3. Strukturované datové typy</s>
+### <s>4. Spojové struktury</s>
+### <s>5. a 6. OOP</s>
+### <s>7. Podprogramy</s>
 
 ### 8. a 9. Návrhové vzory
 * zrychlují návrh (řešení se nevymýšlí, ale jen použije)
@@ -52,6 +52,10 @@ class Pozice
 #### Služebník (Servant)
 *	když je potřeba definovat společnou funkcionalitu pro více tříd současně
 *	**tyto třídy musí implementovat stejné rozhraní, které je vstupním parametrem v metodách služebníka**
+
+#### Prázdný objekt (null object)
+* místo vrácení prázdného nulového ukazatele vrátíme prázdný objekt
+* např. žádná barva, žádný směr apod.
 
 ### NV řešící počet instancí
 * je nutný soukromý konstruktor
@@ -152,12 +156,11 @@ public static void ReleaseInstance(Osoba instance)
 ```
 
 #### Muší váha (flyweight)
-* řeší situace, které při standardním přístupu vyžadují vytvoření příliš velkého množství objektů
+* šetří paměť při úkolech, pro které potřebujeme vytvořit velký počet instancí
 * př. textový editor - každý znak v dokumentu není představován samostatným objektem, ale všechny shodné znaky zastupuje představitel daného znaku
 * vnitřní/vnější stav
 
 ### NV pro skrývání implementace
-* ...
 
 #### Zástupce (proxy)
 #### Příkaz (command)
@@ -166,18 +169,55 @@ public static void ReleaseInstance(Osoba instance)
 #### Šablonová metoda
 
 ### NV pro optimalizaci rozhraní
-* ...
 
 #### Fasáda
 #### Adaptér
 #### Strom (Composite)
 
-
-### 10. Paralelní programování
+### <s>10. Paralelní programování (viz kód)</s>
 
 ### 11. Architektury .NET
 * WPF - bindování, viewmodel, obecně předvést architekturu MVVM
-* ...
+
+Command - obecný kód, implementuje ICommand
+```csharp
+public class RelayCommand : ICommand
+{
+    public event EventHandler? CanExecuteChanged; // udalost, ktera se spusti, pokud se zmeni stav, kdy se muze command spustit
+
+    private Action _execute;
+    private Func<bool> _canExecute;
+
+    public RelayCommand(Action execute, Func<bool> canExecute = null)
+    {
+        _execute = execute;
+        _canExecute = canExecute;
+    }
+
+    public bool CanExecute(object? parameter) // muze se spustit? (kdyz ne, tlacitko je zablokovane)
+    {
+        return _canExecute == null
+                ? true // pokud ho v commandu nezadame, tak je povoleno vždy
+                : _canExecute(); // jinak se spusti funkce, ktera nam vrati true/false
+    }
+
+    public void Execute(object? parameter) // spusti se pri stisku tlacitka
+    {
+        _execute();
+    }
+
+    public void RaiseCanExecuteChanged() // zavola se, pokud se zmeni stav, kdy se muze command spustit
+    {
+        CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+        // invoke znamena
+        // if (CanExecuteChanged != null)
+        // {
+        //     CanExecuteChanged(this, EventArgs.Empty);
+        // }
+
+    }
+}
+```
 
 ### 12. Verzovací systémy
 * https://www.freecodecamp.org/news/10-important-git-commands-that-every-developer-should-know/
@@ -194,4 +234,42 @@ public static void ReleaseInstance(Osoba instance)
 * git merge <branch-name>
 
 ### 13. Testování SW
-* ...
+* máme projekt, který chceme testovat - v tomto případě kalkulačka pro kvadratickou rovnici
+* do stejného solution přidáme nový projekt pro testování - MSTest Test Project
+* nyní je nutné do nového testovacího projektu přidat referenci na testovaný projekt (v kontextovém menu pravé tlačítko - Add - Project Reference)
+* spuštění testů - Test/Run All Tests
+
+Anotace
+```csharp
+[TestClass] // nad testovací třídu
+[TestInitialize] // zavolá se před každým testem
+[TestCleanup] // zavolá se po každém testu
+[TestMethod] // reprezentuje jeden test
+```
+
+Příklad - pomocí Assert testujeme očekávané chování
+```csharp
+private QuadraticEquation _eq;
+
+[TestInitialize] // zavolá se před každým testem
+public void Initialize()
+{
+    _eq = new QuadraticEquation(1, 2, 3); // nastavim koeficienty na a=1,b=2,c=3
+}
+
+[TestMethod]
+[ExpectedException(typeof(QuadraticCoefficientException))] // očekávaná výjimka
+public void TestRootCount()
+{
+    Assert.AreEqual(0, _eq.RootCount); // testuji zda počet kořenů je opravdu 0
+    _eq.SetParameters(-5, 6, 7); // nastavuji parametry
+    Assert.AreEqual(2, _eq.RootCount); // mají nové parametry 2 kořeny?
+    _eq.SetParameters(-7, -79, 16);
+    Assert.AreEqual(2, _eq.RootCount);
+
+    _eq.SetParameters(0, 5, 5); // nyní nastavím kvadratický člen na 0
+    double[] roots = _eq.Roots(); // metoda .Roots() by měla vyhodit výjimku, protože kvadratický člen (a) je nulový
+    
+    // pokud se očekávané hodnoty rovnají výpočtům a opravdu se vyhodí očekávaná výjimka, pak testy proběhly úspěšně
+}
+```
