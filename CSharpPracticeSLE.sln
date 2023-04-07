@@ -3,27 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01ZakladniProgramoveKonstrukce", "01ZakladniProgramoveKonstrukce\01ZakladniProgramoveKonstrukce.csproj", "{E12AD8ED-884D-4492-B97F-32CB5341B39B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01ZakladniProgramoveKonstrukce", "01ZakladniProgramoveKonstrukce\01ZakladniProgramoveKonstrukce.csproj", "{E12AD8ED-884D-4492-B97F-32CB5341B39B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02Algoritmus", "02Algoritmus\02Algoritmus.csproj", "{B1CF7D13-C255-44FD-8FFD-D1EA2E655C59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02Algoritmus", "02Algoritmus\02Algoritmus.csproj", "{B1CF7D13-C255-44FD-8FFD-D1EA2E655C59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03StrukturovaneDatoveTypy", "03StrukturovaneDatoveTypy\03StrukturovaneDatoveTypy.csproj", "{5146C940-FF29-4BE9-A3B9-663C5B91F4C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03StrukturovaneDatoveTypy", "03StrukturovaneDatoveTypy\03StrukturovaneDatoveTypy.csproj", "{5146C940-FF29-4BE9-A3B9-663C5B91F4C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_06OOP", "05_06OOP\05_06OOP.csproj", "{19CF6572-26F9-4178-9DA2-1BD399EC54BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05_06OOP", "05_06OOP\05_06OOP.csproj", "{19CF6572-26F9-4178-9DA2-1BD399EC54BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07Podprogramy", "07Podprogramy\07Podprogramy.csproj", "{25E55666-864E-4CC5-98F1-F71B2F91C652}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07Podprogramy", "07Podprogramy\07Podprogramy.csproj", "{25E55666-864E-4CC5-98F1-F71B2F91C652}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10ParalelniPRG", "10ParalelniPRG\10ParalelniPRG.csproj", "{502D5570-E298-4640-94F1-51C00CCA6DEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10ParalelniPRG", "10ParalelniPRG\10ParalelniPRG.csproj", "{502D5570-E298-4640-94F1-51C00CCA6DEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13TestovaniSW", "13TestovaniSW\13TestovaniSW.csproj", "{6361642D-3A2E-40C7-B4DE-EE04969A0FCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "13TestovaniSW", "13TestovaniSW\13TestovaniSW.csproj", "{6361642D-3A2E-40C7-B4DE-EE04969A0FCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_09NavrhoveVzory", "08_09NavrhoveVzory\08_09NavrhoveVzory.csproj", "{EC0E2772-1436-405A-B488-7215FD371217}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08_09NavrhoveVzory", "08_09NavrhoveVzory\08_09NavrhoveVzory.csproj", "{EC0E2772-1436-405A-B488-7215FD371217}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13UnitTesting", "13UnitTesting\13UnitTesting.csproj", "{B4346C1F-A512-4AF3-8F8F-A71CFC00E921}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "13UnitTesting", "13UnitTesting\13UnitTesting.csproj", "{B4346C1F-A512-4AF3-8F8F-A71CFC00E921}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04aLinearniSeznam", "04aLinearniSeznam\04aLinearniSeznam.csproj", "{6D4CDE94-F864-4271-99E8-8D03661AEF37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04aLinearniSeznam", "04aLinearniSeznam\04aLinearniSeznam.csproj", "{6D4CDE94-F864-4271-99E8-8D03661AEF37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04bBinarniStrom", "04bBinarniStrom\04bBinarniStrom.csproj", "{77D3D351-8091-4002-BA51-72ECCDEC4B7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04bBinarniStrom", "04bBinarniStrom\04bBinarniStrom.csproj", "{77D3D351-8091-4002-BA51-72ECCDEC4B7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11ArchitekturyNET", "11ArchitekturyNET\11ArchitekturyNET.csproj", "{38AEC640-968B-41A6-8F01-AD9510946CD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{77D3D351-8091-4002-BA51-72ECCDEC4B7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77D3D351-8091-4002-BA51-72ECCDEC4B7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77D3D351-8091-4002-BA51-72ECCDEC4B7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38AEC640-968B-41A6-8F01-AD9510946CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38AEC640-968B-41A6-8F01-AD9510946CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38AEC640-968B-41A6-8F01-AD9510946CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38AEC640-968B-41A6-8F01-AD9510946CD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
