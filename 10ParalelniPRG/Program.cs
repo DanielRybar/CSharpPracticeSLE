@@ -23,7 +23,7 @@ ta.Start();
 Thread tb = new Thread(new ParameterizedThreadStart(MethodB));
 tb.Start("foo");
 
-// Bez specifikování delegáta se kompilátor rozhodne na základně signatury metody:
+// Bez specifikování delegáta se kompilátor rozhodne na základě signatury metody:
 /*
 Thread ta = new Thread(MethodA); // Implicitně přetypováno na ThreadStart
 ta.Start();
@@ -32,7 +32,8 @@ tb.Start("foo");
 */
 
 // Task
-// třída reprezentující asynchronní operaci, v Reactu je to Promise
+// třída reprezentující asynchronní operaci
+// v Reactu je to Promise
 // vyšší úroveň abstrakce než Thread, vnitřně implementuje třídu ThreadPool
 Task task = new Task(() => { }); // vytvoření úlohy
 task.Start(); // spuštění úlohy
@@ -57,7 +58,7 @@ Parallel.ForEach(new int[] { 1, 2, 3 }, i => { });
 // Zámek je objekt, který umožňuje synchronizaci vláken
 // lock() uzamyká kus kódu objektem, který dostane jako vstupní parametr
 // V tomto kusu kódu může být pouze jedno vlákno, ostatní čekají
-// Vstupním parametrem je kód uzamčen ale samotný parametr nijak uzamčen/chráněn/modifikován není, může to být libovolný object
+// Vstupním parametrem je kód uzamčen, ale samotný parametr nijak uzamčen/chráněn/modifikován není, může to být libovolný objekt
 object baton = new object();
 void Method()
 {
@@ -73,7 +74,7 @@ void Method()
     Console.WriteLine(id + " je na konci metody");
 }
 
-//for (int i = 0; i < 3; i++) new Thread(Method).Start();
+for (int i = 0; i < 3; i++) new Thread(Method).Start();
 
 /* Výstup může vypadat:
 12 se snaží dostat do chráněné sekce
@@ -104,112 +105,3 @@ finally
 // async, await
 // async a await jsou klíčová slova, která umožňují psát asynchronní kód
 // využití: při práci s databází, sítí, soubory, ...
-
-
-// Ukázka kódu
-// chceme sečíst všechna čísla v poli
-int[] numbers = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-
-// normální cesta
-long sum = 0;
-foreach (var number in numbers)
-{
-    sum += number;
-}
-Console.WriteLine("Normální cesta: " + sum);
-
-
-// ....................................................
-
-
-// pomocí Thread
-int CPUs;
-int portionSize;
-long[] sumPortions;
-
-CPUs = Environment.ProcessorCount; // Vrací počet logických procesorů, které mohou být využity CLR
-portionSize = numbers.Length / CPUs; // Rozdělení pole pro jednotlivá vlákna
-sumPortions = new long[CPUs]; // Pole pro (mezi)výsledky
-long sum2 = 0;
-
-// Vytvoření pole vláken a jejich spuštění
-Thread[] threads = new Thread[CPUs];
-for (int i = 0; i < CPUs; i++)
-{
-    threads[i] = new Thread(SumPortion);
-    threads[i].Start(i);
-}
-// Počkat, až všechna vlákna skončí
-// .Join() blokuje volající vlákno, dokud dané vlákno neskončí
-for (int i = 0; i < CPUs; i++) threads[i].Join();
-// Sečíst (mezi)výsledky jednotlivých vláken
-for (int i = 0; i < CPUs; i++) sum2 += sumPortions[i];
-
-void SumPortion(object _portionNumber)
-{
-    int portionNumber = (int)_portionNumber; // Explicitní přetypování
-    var start = portionSize * portionNumber;
-    var end = (portionNumber == CPUs - 1) ? (numbers.Length) : (portionSize * portionNumber + portionSize);
-    // $"Vlákno {Environment.CurrentManagedThreadId}" pracuje od {start} do {end - 1}
-    long sum = 0;
-    for (int i = start; i < end; i++) sum += numbers[i];
-    sumPortions[portionNumber] = sum;
-}
-
-Console.WriteLine("Thread cesta: " + sum2);
-
-
-// ....................................................
-
-
-// pomocí Task
-CPUs = Environment.ProcessorCount;
-portionSize = numbers.Length / CPUs;
-sumPortions = new long[CPUs];
-long sum3 = 0;
-
-Task[] tasks = new Task[CPUs];
-for (int i = 0; i < CPUs; i++)
-{
-    var tid = i; // Pro jistotu
-    tasks[tid] = Task.Run(() =>
-    {
-
-        var start = portionSize * tid;
-        var end = (tid == CPUs - 1) ? (numbers.Length) : (portionSize * tid + portionSize);
-
-        long sum = 0;
-        for (int j = start; j < end; j++) sum += numbers[j];
-        sumPortions[tid] = sum;
-
-    });
-}
-
-Task.WaitAll(tasks); // Počká, až se dokončí všechny Tasky v poli
-
-for (int i = 0; i < CPUs; i++) sum3 += sumPortions[i]; // Sečíst (mezi)výsledky
-
-Console.WriteLine("Task cesta: " + sum3);
-
-
-// ....................................................
-
-
-// pomocí Parallel.For
-sum = 0;
-Parallel.For(0, CPUs, (i) =>
-{
-
-    var tid = i;
-    var start = portionSize * tid;
-    var end = (tid == CPUs - 1) ? (numbers.Length) : (portionSize * tid + portionSize);
-
-    long sum = 0;
-    for (int j = start; j < end; j++) sum += numbers[j];
-    sumPortions[tid] = sum;
-
-});
-
-for (int i = 0; i < CPUs; i++) sum += sumPortions[i];
-
-Console.WriteLine("Parallel for: " + sum);
