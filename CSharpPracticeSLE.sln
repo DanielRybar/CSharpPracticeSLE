@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04aLinearniSeznam", "04aLin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04bBinarniStrom", "04bBinarniStrom\04bBinarniStrom.csproj", "{77D3D351-8091-4002-BA51-72ECCDEC4B7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11ArchitekturyNET", "11ArchitekturyNET\11ArchitekturyNET.csproj", "{38AEC640-968B-41A6-8F01-AD9510946CD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11ArchitekturyNET", "11ArchitekturyNET\11ArchitekturyNET.csproj", "{38AEC640-968B-41A6-8F01-AD9510946CD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_09NavrhoveVzory2", "08_09NavrhoveVzory2\08_09NavrhoveVzory2.csproj", "{0AA929FA-59EF-40A2-A4E6-21E793C6EC14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{38AEC640-968B-41A6-8F01-AD9510946CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38AEC640-968B-41A6-8F01-AD9510946CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38AEC640-968B-41A6-8F01-AD9510946CD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AA929FA-59EF-40A2-A4E6-21E793C6EC14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AA929FA-59EF-40A2-A4E6-21E793C6EC14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AA929FA-59EF-40A2-A4E6-21E793C6EC14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AA929FA-59EF-40A2-A4E6-21E793C6EC14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
