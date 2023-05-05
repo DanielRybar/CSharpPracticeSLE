@@ -13,8 +13,11 @@
 ### 4. Spojové struktury
 * [ZDE](./_files/04_SS.md)
 
-### 8. a 9. Návrhové vzory
-* [ZDE](./_files/08_09_NV.md)
+### 8. Návrhové vzory pro vytváření instancí, rozšiřování funkcionality
+* [ZDE](./_files/08_NV1.md)
+
+### 9. Návrhové vzory pro skrývání implementace, optimalizaci rozhraní
+* [ZDE](./_files/09_NV2.md)​
 
 ### 10. Paralelní programování
 * [ZDE](./_files/10_Paralelni_PRG.md)
