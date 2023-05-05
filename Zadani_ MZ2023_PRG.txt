@@ -1,0 +1,25 @@
+1: Na jednoduché konzolové aplikaci demonstrujte situaci: ... - práce s datovými typy a základní programové konstrukce
+
+2: Zapište algoritmus pro ... a určete (odvoďte) operační a paměťovou složitost. Porovnejte rekurzivní a nerekurzivní řešení ... (Zde může být i slovní zápis.)
+
+3: Vytvořte příklad demonstrující rozdíly mezi ... Vytvořte generickou třídu implementující ... - nějaký strukturovaný typ
+
+4: Vytvořte generickou třídu pro ... - nějaká spojová struktura a implementujte metodu pro ...
+
+5: Vytvořte třídu ... se zadanými atributy, vlastnostmi a metodami a demonstujte její použití.
+
+6: Vytvořte 2 třídy ... se zadanými atributy, vlastnostmi a metodami s využitím dědičnosti a polymorfismu a demonstrujte jejich použití.
+
+7: Porovnejte chování 2 podprogramů ... Vytvořte jednoduchý podprogram ... dle zadaných parametrů.
+
+8: Vytvořte jednoduchou konzolovou aplikaci, kde implementujete vybrané návrhové vzory ... (Nemusí být zcela funkční. Jaké návrhové vzory sem patří, bude uvedeno.)
+
+9: Vytvořte jednoduchou konzolovou aplikaci, kde implementujete vybrané návrhové vzory ... (Nemusí být zcela funkční. Jaké návrhové vzory sem patří, bude uvedeno.)
+
+10: Vytvořte paralelní algoritmus pro ... (Nebudou tam obrázky, jedině kdybyste o to výslovně projevili zájem.) Porovnejte s neparalelním řešením.
+
+11: Vytvořte jednoduchou GUI aplikaci dle MVVM pro ... . Vhodně využijte binding a command.
+
+12: Demonstrujte základní práci s verzovacím systémem. (Toto je jediná otázka, kde bude k dispozici internet, ale bez možnosti použít prohlížeč.)
+
+24: Vytvořte konzolovou aplikaci pro ... a demonstrujte jednotlivé druhy chyb, způsoby ladění aplikace, výjimky a testování pomocí jednotkových testů.

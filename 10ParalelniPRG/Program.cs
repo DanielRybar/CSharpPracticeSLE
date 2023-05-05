@@ -1,4 +1,6 @@
-﻿int pocetLogickychJader = System.Environment.ProcessorCount;
+﻿using System.Diagnostics;
+
+int pocetLogickychJader = System.Environment.ProcessorCount;
 Console.WriteLine("Logická jádra: " + pocetLogickychJader);
 
 // Proč používat paralelní PRG?
@@ -74,7 +76,7 @@ void Method()
     Console.WriteLine(id + " je na konci metody");
 }
 
-for (int i = 0; i < 3; i++) new Thread(Method).Start();
+// for (int i = 0; i < 3; i++) new Thread(Method).Start();
 
 /* Výstup může vypadat:
 12 se snaží dostat do chráněné sekce
@@ -105,3 +107,73 @@ finally
 // async, await
 // async a await jsou klíčová slova, která umožňují psát asynchronní kód
 // využití: při práci s databází, sítí, soubory, ...
+
+
+// příklad
+int[] pole = new int[10] { 50, 4, 3, 9, 1054, 3986, 0, -99, 2, 47 }; // pole deseti neseřazených čísel
+int[] pole1 = new int[10] { 50, 4, 3, 9, 1054, 3986, 0, -99, 2, 47 }; // pole deseti neseřazených čísel
+
+Stopwatch stopky = Stopwatch.StartNew();
+
+BubbleSort(pole);
+stopky.Stop();
+Console.WriteLine("Normální čas: " + stopky.ElapsedMilliseconds);
+
+stopky.Restart();
+
+ParallelBubbleSort(pole1);
+stopky.Stop();
+Console.WriteLine("Paralelní čas: " + stopky.ElapsedMilliseconds); // trvá déle, kvůli režii
+
+/*
+// vytvoření a spuštění úlohy
+Task task5 = new Task(() => BubbleSort(pole));
+task5.Start();
+
+// čekání na dokončení úlohy
+task5.Wait();
+
+// výpis seřazeného pole
+foreach (int i in pole)
+{
+    Console.Write(i + " ");
+}
+*/
+
+static void BubbleSort(int[] array)
+{
+    int n = array.Length;
+    bool swapped;
+    do
+    {
+        swapped = false;
+        for (int i = 0; i < n - 1; i++)
+        {
+            if (array[i] > array[i + 1])
+            {
+                (array[i + 1], array[i]) = (array[i], array[i + 1]);
+                swapped = true;
+            }
+        }
+        n--;
+    } while (swapped);
+}
+
+static void ParallelBubbleSort(int[] array)
+{
+    int n = array.Length;
+    bool swapped;
+    do
+    {
+        swapped = false;
+        Parallel.For(0, n - 1, i => // paralelni iterace
+        {
+            if (array[i] > array[i + 1])
+            {
+                (array[i + 1], array[i]) = (array[i], array[i + 1]);
+                swapped = true;
+            }
+        });
+        n--;
+    } while (swapped);
+}

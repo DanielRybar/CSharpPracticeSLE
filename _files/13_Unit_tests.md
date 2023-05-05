@@ -1,4 +1,32 @@
 ## 13. Testování SW
+
+### Chyba
+* něco je špatně nebo nevyhovuje očekávaným standardům
+
+### Sémantická chyba
+* program dělá něco jiného než jsme zamýšleli
+* může se projevit jen někdy
+* nemusí být vidět na první pohled
+
+### Syntaktická chyba
+* prohřešek proti gramatice používaného programovacího jazyka, jsou odhaleny kompilátorem
+* editor ve VS je odhalí bez kompilace
+
+### Ladění aplikace (debugging)
+* pomocí **breakpointů, logování, sledování výkonu**, ...
+
+### Výjimka
+* **pasivní** ošetření - **blok try-catch(-finally)**, pokud k výjimce dojde, tak ...
+* **aktivní** ošetření - snažíme se vyhození výjimky **předejít** - hromady podmínek apod.
+
+### Testování
+* spouštíme program s nejrůznějšími (nepředpokládanými) testovacími vstupy a sledujeme, jak se s nimi vypořadá
+
+### Jednotkové testy
+* testování jednotlivých funkčních částí aplikace
+* ověření správné funkcionality jednotky kódu (porovnání s očekávaným výstupem)
+
+### Návod pro vytvoření testovacího projektu
 * máme projekt, který chceme testovat - v tomto případě kalkulačka pro kvadratickou rovnici
 * do stejného solution přidáme nový projekt pro testování - MSTest Test Project
 * nyní je nutné do nového testovacího projektu přidat referenci na testovaný projekt (v kontextovém menu pravé tlačítko - Add - Project Reference)
